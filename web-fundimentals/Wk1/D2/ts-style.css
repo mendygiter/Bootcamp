@@ -1,0 +1,18 @@
+h1 {
+    text-align: left;
+    background-color: black;
+    
+}
+h2 {
+    color: white;
+    font-style: italic;
+    background-color: purple;
+    text-align: center;
+}
+
+h3 {
+    background-color: lightblue;
+    text-align: right;
+    text-decoration: underline;
+    font-weight: normal;
+}

@@ -35,15 +35,14 @@ p {
     margin-left: 30px;
     text-align: center;  
 }
-.dot {
+button {
     background-color: turquoise;
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    margin: 30px;
-    margin-left: 30px;
     text-align: center;
     font-size: large;
+    color: white;
+    margin: 30px;
+
 }
 input[type=submit] {
     padding:5px 15px; 

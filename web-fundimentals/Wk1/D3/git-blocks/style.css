@@ -1,21 +1,43 @@
-.box {
+.container {
     background-color: rgb(233, 233, 233);
     width: 950px;
-    height: 600px;
+    height: 750px;
     border-top: 2px solid black;
-    display: flex;
+    padding: 10px;
 }
 
 h1 {
     text-align: center;
-    margin-bottom: -8px;
-    margin-top: -1px;
-    display: inline-flex;
+    margin-bottom: 5px;
+    margin-top: -8px;
+    
 }
-
 .row1 {
     background-color: aqua;
-    margin: 20px;
-    width: 875px;
+    padding: 15px;
+    width: 900px;
     height: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+
+img {
+    width: 250px;
+    height: 200px;
+}
+.row2 {
+    background-color: pink;
+    padding: 15px;
+    width: 900px;
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.row3 {
+    background-color: red;
+    padding: 15px;
+    width: 900px;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
 }

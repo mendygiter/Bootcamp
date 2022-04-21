@@ -1,0 +1,21 @@
+.box {
+    background-color: rgb(233, 233, 233);
+    width: 950px;
+    height: 600px;
+    border-top: 2px solid black;
+    display: flex;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: -8px;
+    margin-top: -1px;
+    display: inline-flex;
+}
+
+.row1 {
+    background-color: aqua;
+    margin: 20px;
+    width: 875px;
+    height: 200px;
+}

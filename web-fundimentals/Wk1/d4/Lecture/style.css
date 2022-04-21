@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 1px solid pink;
+    /* Shows the outline but does not move anything more visual than actually affecting spacing
+    We use outline vs border because it doesn't take up any space on the page vs border which does.*/
+}
+
+p {
+    background-color: bisk;
+}
+/*this is a css reset, removes all margin and padding on the page using "*"*/
+
+.bob {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    background-color: burlywood;
+    position: absolute;
+    bottom: 10px;
+    /*telling if from the bottom of the page move up 10px*/
+
+    position: fixed;
+    /* stayes fixed on the page and does not move with the text behind it as you sxcroll*?*/
+
+}
+
+.carl {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    background-color: blue;
+    position: relative;
+    bottom: 30px;
+    top: 30px;
+}
+/* moves the item around from it's original starting position*/
+
+.stick {
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    background-color: green;
+    position: fixed;
+    top: 50px;
+}

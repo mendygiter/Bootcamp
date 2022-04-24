@@ -1,0 +1,28 @@
+.container {
+    width: 900px;
+    height: 500px;
+    margin-left: 100px;
+}
+
+
+
+.topbar {
+    background-color: teal;
+    height: 100px;
+    display: inline-flex;
+    
+}
+.topbar > img {
+    height: 50px;
+}
+.box > span {
+    display: block;
+}
+
+.headshot  {
+    width: 100px;
+    margin-left: 30px;
+}
+.box {
+    height: 100px;
+}

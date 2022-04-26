@@ -8,22 +8,27 @@
     align-items: center;
     padding-left: 10px;
 }
+
 .nav-links {
     display: flex;
     color: darkslategray;
     justify-content: space-between;
     flex: 1;
-    
+
 }
+
 .nav-title {
     color: white;
     flex: 1;
 }
+
 a {
     color: rgba(158, 158, 158, 0.832);
     text-decoration: none;
 
 }
+
 .active {
     color: white;
 }
+

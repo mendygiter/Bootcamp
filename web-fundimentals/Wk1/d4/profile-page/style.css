@@ -1,0 +1,166 @@
+.container {
+    height: 975px;
+    width: 975px;
+    display: flex;
+    font-family: 'Inconsolata', monospace;
+
+}
+
+.topbar {
+    background-color: black;
+    height: 50px;
+    width: 975px;
+    display: flex;
+    flex: 1;
+    align-items: center;
+
+}
+
+h1 {
+    color: white;
+    padding-left: 100px;
+}
+
+.nav-links {
+    display: flex;
+    margin-right: 50px;
+    flex: 1;
+    justify-content: space-between;
+    width: 175px;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/*Profile*/
+.main {
+    width: 375px;
+    height: 700px;
+    align-items: center;
+    display: flex;
+    margin: 30px;
+    flex-direction: column;
+}
+
+/*bio*/
+.profile {
+    height: 250px;
+    width: 375px;
+    margin: -40px;
+}
+
+.profilebar {
+    background-color: teal;
+    height: 75px;
+    width: 375px;
+}
+
+.profilebar > img {
+    padding-left: 30px;
+}
+
+img {
+    width: 75px;
+    margin-top: 40px
+}
+
+
+img {
+    width: 75px;
+    margin-top: 40px
+}
+
+.main {
+    padding-top: 30px;
+    padding-left: 18px;
+    font-family: 'Inconsolata', monospace;
+}
+
+h3>img {
+    height: 25px;
+    width: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.bio {
+    border: solid;
+    border-color: rgb(188, 188, 188);
+    border-width: 3px;
+    border-top: none;
+}
+
+.gear>img {
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+/*expirience*/
+.expirience {
+    height: 175px;
+    width: 375px;
+    margin-top: 50px;
+    border: solid;
+    border-color: rgb(188, 188, 188);
+    border-width: 3px;
+    border-top: none;
+}
+
+.expiriencebar {
+    background-color: rgb(69, 69, 69);
+    height: 25px;
+    width: 375px;
+    color: white;
+}
+
+/*connection requests*/
+.connections {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 215px;
+    justify-content: center;
+    border: solid;
+    border-color: rgb(188, 188, 188);
+    border-width: 3px;
+    border-top: none;
+
+}
+
+.connect {
+    height: 700px;
+    width: 215px;
+    padding: 18px;
+    padding: 60px;
+    margin: -40px;
+}
+
+.request {
+    height: 30px;
+    width: 125px;
+    
+}
+
+.requestbar {
+    background-color: rgb(49, 49, 49);
+    color: white;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    width: 215px;
+    
+}
+
+.connectbar {
+    background-color: rgb(49, 49, 49);
+    color: white;
+    height: 45px;
+    justify-content: center;
+    display: flex;
+}

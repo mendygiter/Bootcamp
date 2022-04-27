@@ -1,63 +1,58 @@
 .container {
     height: 975px;
-    width: 975px;
+    width: 950px;
     display: flex;
     font-family: 'Inconsolata', monospace;
-
 }
-
 .topbar {
     background-color: black;
     height: 50px;
-    width: 975px;
+    
     display: flex;
-    flex: 1;
+    justify-content: space-between;
     align-items: center;
-
 }
-
-h1 {
+.btn {
+    color: white;
+    background-color: RGB(20, 162, 184);
+    margin-right: 20px;
+}
+.title {
     color: white;
     padding-left: 100px;
+    margin-right: 20px;
 }
-
 .nav-links {
     display: flex;
     margin-right: 50px;
-    flex: 1;
+    align-items: center;
     justify-content: space-between;
-    width: 175px;
-
+    width: 500px;
 }
-
-a {
+.nav-links > li > a {
     text-decoration: none;
     color: white;
+    margin-left: 20px;  
 }
-
 /*Profile*/
 .main {
-    width: 375px;
+    width: 450px;
     height: 700px;
-    align-items: center;
-    display: flex;
-    margin: 30px;
-    flex-direction: column;
+    margin: 18px;
+    margin-left:120px;
 }
-
 /*bio*/
 .profile {
-    height: 250px;
-    width: 375px;
-    margin: -40px;
+    width: 450px;
 }
-
+#profilepic {
+    border-radius: 50%;
+}
 .profilebar {
-    background-color: teal;
+    background-color: RGB(20, 162, 184);
     height: 75px;
-    width: 375px;
+    width: 450px;
 }
-
 .profilebar > img {
     padding-left: 30px;
 }
@@ -67,19 +62,12 @@ img {
     margin-top: 40px
 }
 
-
-img {
-    width: 75px;
-    margin-top: 40px
-}
-
 .main {
-    padding-top: 30px;
     padding-left: 18px;
     font-family: 'Inconsolata', monospace;
 }
 
-h3>img {
+h3 > img {
     height: 25px;
     width: 20px;
     margin-right: 10px;
@@ -88,10 +76,18 @@ h3>img {
 }
 
 .bio {
-    border: solid;
-    border-color: rgb(188, 188, 188);
+    /*border: solid;
+    border-color: (188, 188, 188rgb);
     border-width: 3px;
     border-top: none;
+    border-bottom: none;*/
+    border: 3px solid grey;
+    border-top: solid teal;
+    padding-left: 20px;
+}
+
+#person {
+    padding-top: 30px;
 }
 
 .gear>img {
@@ -101,66 +97,112 @@ h3>img {
     margin-top: 10px;
 }
 
+
 /*expirience*/
 .expirience {
     height: 175px;
-    width: 375px;
-    margin-top: 50px;
-    border: solid;
-    border-color: rgb(188, 188, 188);
-    border-width: 3px;
-    border-top: none;
+    width: 450px;
+    margin-top: 10px;
 }
 
 .expiriencebar {
     background-color: rgb(69, 69, 69);
-    height: 25px;
-    width: 375px;
     color: white;
-}
+    padding: 5px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
 
+    
+}
+.year {
+    color: grey;
+}
 /*connection requests*/
 .connections {
     display: flex;
     flex-direction: column;
-    height: 600px;
-    width: 215px;
     justify-content: center;
-    border: solid;
-    border-color: rgb(188, 188, 188);
-    border-width: 3px;
-    border-top: none;
-
+    
+    margin-top: 15px;
 }
 
 .connect {
     height: 700px;
     width: 215px;
     padding: 18px;
-    padding: 60px;
-    margin: -40px;
-}
-
-.request {
-    height: 30px;
-    width: 125px;
+    /* padding: 60px;
+    /*margin: -40px;*/
     
 }
-
-.requestbar {
-    background-color: rgb(49, 49, 49);
-    color: white;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    width: 215px;
-    
-}
-
 .connectbar {
     background-color: rgb(49, 49, 49);
     color: white;
     height: 45px;
     justify-content: center;
     display: flex;
+}
+.request {
+    /*height: 30px;
+    width: 125px;*/
+    border: 3px solid grey
+}
+
+.requestbar {
+    background-color: rgb(65, 65, 65);
+    color: white;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.people {
+    padding: 0px;
+}
+
+.phil {
+    display: flex;
+    justify-content: space-evenly;
+}
+.todd {
+    display: flex;
+    justify-content: space-evenly;
+}
+#accept {
+    width: 20px;
+    height: 20px;
+}
+#reject {
+    width: 20px;
+    height: 20px;
+}
+.connectbar {
+    background-color: rgb(49, 49, 49);
+    color: white;
+    height: 45px;
+    justify-content: center;
+    display: flex;
+    
+}
+.friends {
+    
+    border: 3px solid rgb(157, 157, 157);
+}
+#sidebar {
+    margin-left: 15px;
+}
+.work-exp {
+    border: 3px solid grey;
+}
+.more-link {
+    border-top: 3px solid grey;
+    display: flex;
+    align-content: center;
+}
+
+#accept_button {
+    display: flex;
+    background-color: RGB(51, 51, 51);
 }

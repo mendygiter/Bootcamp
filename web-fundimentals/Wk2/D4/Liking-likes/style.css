@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    border: 3px solid black;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    display: inline-block;
+    padding-left: 25px;
+    
+}
+.likes {
+    display: flex;
+    align-items: center;
+    padding-bottom: 70px;
+}
+.btn {
+    margin-left: 30px;
+    margin: 20px;
+    background-color: RGB(255, 216, 102);
+    box-shadow: 2px 2px black;
+}
+
+#count {
+    background-color: white;
+    color: black;
+}

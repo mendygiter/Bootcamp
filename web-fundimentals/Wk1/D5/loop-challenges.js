@@ -18,3 +18,18 @@ for (var i=0; i < arr.length; i++) {
     console.log(arr[i]);
 }
 
+// Sigma
+var sum = 0 
+for (var i = 1; i <= 100; i++) {
+    // sum += i;
+    sum = sum + i;
+}
+console.log(sum);
+
+// Factorial
+var product = 1 
+for (var i = 1; i <= 12; i++) {
+    // sum += i;
+    product = product * i;
+}
+console.log(product);

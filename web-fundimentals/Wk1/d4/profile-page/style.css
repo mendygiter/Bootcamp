@@ -159,7 +159,7 @@ h3 > img {
     
 }
 .people {
-    padding: 0px;
+    padding: px;
 }
 
 .phil {
@@ -178,14 +178,14 @@ h3 > img {
     width: 20px;
     height: 20px;
 }
-.connectbar {
+/* .connectbar {
     background-color: rgb(49, 49, 49);
     color: white;
     height: 45px;
     justify-content: center;
     display: flex;
-    
-}
+} */
+
 .friends {
     
     border: 3px solid rgb(157, 157, 157);
@@ -205,4 +205,16 @@ h3 > img {
 #accept_button {
     display: flex;
     background-color: RGB(51, 51, 51);
+}
+.number {
+    background-color: grey;
+    border-radius: 50%;
+    padding: 4px 8px;
+    margin-right: 10px;
+}
+.num2 {
+    background-color: grey;
+    border-radius: 50%;
+    margin-right: 10px;
+    padding: 4px 8px;
 }

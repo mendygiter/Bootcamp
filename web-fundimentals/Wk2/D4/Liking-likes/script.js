@@ -17,5 +17,5 @@ var query = [
 ]
 function add1 (i) {
     likes[i]++
-    query[i].innerText = likes[i] + " likes(s)";
+    query[i].innerText = likes[i] + " Likes(s)";
 }

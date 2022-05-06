@@ -44,6 +44,3 @@ if __name__=="__main__":   # Ensure this file is being run directly and not from
 
 
 
-@app.route('/success')
-def success():
-    return 'success'

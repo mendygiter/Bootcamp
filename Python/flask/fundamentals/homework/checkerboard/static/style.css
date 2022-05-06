@@ -1,0 +1,31 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    line-height: ;
+}
+
+h1 {
+    color: red;
+    
+}
+
+.cell {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    justify-content: space-around;
+}
+
+.cell0 {
+    background-color: red;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+}
+
+.cell1 {
+    background-color: black;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+}

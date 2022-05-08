@@ -24,8 +24,6 @@ for count in range(1,500000,2):
         sum += count
 print (sum)
 
-
-
 #flexible counter
 lowNum = 2
 highNum = 9

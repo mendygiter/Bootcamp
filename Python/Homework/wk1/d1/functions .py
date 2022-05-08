@@ -7,6 +7,6 @@ sports_directory = {
     'basketball': ['Kobe', 'Jordan', 'James', 'Curry'],
     'soccer': ['Messi', 'Ronaldo', 'Rooney']
 }
-z = [{'x': 10, 'y': 20}
+z = [{'x': 10, 'y': 20}]
 
 

@@ -3,6 +3,9 @@ from helpers import generate_checkerboard
 
 app = Flask(__name__)
 
+if __name__=='__main__':
+    app.run(debug = True)
+
 # @app.route('/')
 # def index():
 #     return 'hello!'
@@ -23,5 +26,3 @@ def checkerboard_3(x, y):
     result = generate_checkerboard(x, y)
     return render_template('index.html', result = result )
 
-if __name__=='__main__':
-    app.run(debug = True)

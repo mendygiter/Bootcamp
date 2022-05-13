@@ -10,6 +10,7 @@ def index():
     print(friends)
     return render_template("index.html", friends = friends)
 
+
 @app.route('/add_data', methods = ['POST'])
 def add_data():
     data = {
@@ -19,6 +20,19 @@ def add_data():
     }
     Friend.insert_friends(data)
     return redirect('/')
+    
+
+
+@app.route('/show/<int:id>')
+def get_friend(id):
+    data = {
+        'id': id
+    }
+
+    friend = Friend.get_one(data)
+    return render_template("show_one.html", friend = friend)
+
+
 
 @app.route('/create_friend', methods=["POST"])
 def create_friend():

@@ -14,6 +14,14 @@ class Friend:
 
     # Now we use class methods to query our database
     @classmethod
+    def get_one(cls, data):
+        query = "SELECT * FROM friends WHERE id = %(id)s;"
+        # make sure to call the connectToMySQL function with the schema you are targeting.
+        results = connectToMySQL('first_flask').query_db(query, data)
+        return cls(results[0])
+
+
+    @classmethod
     def get_all(cls):
         query = "SELECT * FROM friends;"
         # make sure to call the connectToMySQL function with the schema you are targeting.
@@ -26,7 +34,6 @@ class Friend:
         return friends
 
 
-
     @classmethod
     def insert_friends(cls, data):
         query = "INSERT INTO friends(first_name, last_name, occupation, created_at) VALUES (%(first_name)s, %(last_name)s, %(occupation)s, NOW())"
@@ -34,8 +41,6 @@ class Friend:
         return results
 
 
-
-class Friend:
     # ... other class methods
     # class method to save our friend to the database
     @classmethod

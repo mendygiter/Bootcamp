@@ -13,7 +13,7 @@
 
 
     {% for one_friend in friends %}
-    <p>First Name: {{one_friend.first_name}}</p>
+    <p>First Name: <a href="/show/{{one_friend.id}}"> {{one_friend.first_name}}</a></p>
     <p>Last Name: {{one_friend.last_name}}</p>
     <p>Occupation: {{one_friend.occupation}}</p>
     <hr>

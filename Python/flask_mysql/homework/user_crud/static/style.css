@@ -1,0 +1,12 @@
+* {
+    margin:0px;
+    padding: 0px;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: inline-block;
+}

@@ -1,4 +1,5 @@
-from mysqlconnection import connectToMySQL
+from user_crud.config.mysqlconnection import connectToMySQL
+
 #1. we create the user class that is modeled after our erd in SQL-workbench
 class User:
     def __init__(self, data):

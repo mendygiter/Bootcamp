@@ -10,7 +10,15 @@
     <h1>All Dojos</h1>
 
     {%for one_dojo in all_dojos%} 
-    <p>{{one_dojo.name</p>
+    <p>{{one_dojo.name}}</p>
     {%endfor%}
+
+    <form action="create" method = 'POST'> 
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+        <input type="submit" value="Create">
+    </form>
+
+    <a href="">Add ninja</a>
 </body>
 </html>

@@ -7,12 +7,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1></h1>
+    <h1>{{dojo_ninjas.name}}</h1>
+    {% if not dojo_ninjas.ninjas %}
+    <p>No ninjas</p>
+    {% else %}
     {% for ninja in dojo_ninjas.ninjas %}
     <p>First_name{{ninja.first_name}}</p>
     <p>Last_name{{ninja.last_name}}</p>
     <p>Age {{ninja.age}}</p>
     {%endfor%}
+    {% endif %}
     
 
     <a href="/home">Home</a>

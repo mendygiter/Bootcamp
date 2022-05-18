@@ -29,11 +29,7 @@ class User():
             users.append(User(item))
 
         print(users)
-
         
-
-
-
 
     @classmethod
     def get_user_by_username(cls, data):

@@ -1,4 +1,5 @@
 import email
+from lib2to3.pytree import _Results
 from flask_app.config.mysqlconnection import MySQLConnection, connectToMySQL
 
 
@@ -20,9 +21,30 @@ class User():
     def create_user(self, data):
         query = 'INSERT INTO users (first_name, last_name, username, email, password) VALUES (%(first_name)s, %(last_name)s, %(username)s, %(email)s, %(password)s);'
 
-        result = connectToMySQL('login').query_db(query, data)
+        results = connectToMySQL('login').query_db(query, data)
 
-        return result
+        users = []
+
+        for item in results:
+            users.append(User(item))
+
+        print(users)
+
+        
+
+
+
+
+    @classmethod
+    def get_user_by_username(cls, data):
+        query = 'SELECT * FROM users WHERE username = %(username)s;'
+
+        Results = connectToMySQL('login').query_db(query, data)
+
+
+
+
+
 
     @staticmethod
     def validate_user(data):
@@ -37,6 +59,11 @@ class User():
             flash('Username must be at leat 3 character, and up to 20')
 
     # username must be uniqe
+        if len(User.get_user_by_username({'username': data['username']})) != 0:
+            is_valid = False 
+            flash('Username already in use')
+
+
 
     #email must follow a pattern
         if not email_regex.match(data['email']):

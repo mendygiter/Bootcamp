@@ -24,7 +24,7 @@ def register_user():
             'password': bcrypt.generate_password_hash(request.form['password'])
             }
         
-        User.create_user(data)
+        # User.create_user(data)
 
     else: 
         print('is not valid')

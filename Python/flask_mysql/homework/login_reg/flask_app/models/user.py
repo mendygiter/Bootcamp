@@ -1,10 +1,7 @@
-import email
-from lib2to3.pytree import _Results
 from flask_app.config.mysqlconnection import MySQLConnection, connectToMySQL
-
-
 from flask import flash
 import re
+
 class User():
 
     def __init__(self, data):
@@ -17,9 +14,19 @@ class User():
         self.created_at = data ['created_at']
         self.updated_at = data['updated_at']
 
+    #method to add new user
     @classmethod
     def create_user(self, data):
         query = 'INSERT INTO users (first_name, last_name, username, email, password) VALUES (%(first_name)s, %(last_name)s, %(username)s, %(email)s, %(password)s);'
+
+        result = connectToMySQL('login').query_db(query, data)
+
+        return result
+
+    #method to make sure duplicates are not created
+    @classmethod
+    def get_user_by_username(cls, data):
+        query = 'SELECT * FROM users WHERE username = %(username)s;'
 
         results = connectToMySQL('login').query_db(query, data)
 
@@ -27,19 +34,23 @@ class User():
 
         for item in results:
             users.append(User(item))
-
-        print(users)
         
+        return users
 
+
+        #method to make sure no duplicate account with the same email
     @classmethod
-    def get_user_by_username(cls, data):
-        query = 'SELECT * FROM users WHERE username = %(username)s;'
+    def get_user_by_email(cls, data):
+        query = 'SELECT * FROM users WHERE email = %(email)s;'
 
-        Results = connectToMySQL('login').query_db(query, data)
+        results = connectToMySQL('login').query_db(query, data)
 
+        users = []
 
-
-
+        for item in results:
+            users.append(User(item))
+        
+        return users
 
 
     @staticmethod
@@ -55,7 +66,7 @@ class User():
             flash('Username must be at leat 3 character, and up to 20')
 
     # username must be uniqe
-        if len(User.get_user_by_username({'username': data['username']})) != 0:
+        if len(User.get_user_by_username(data))!= 0:
             is_valid = False 
             flash('Username already in use')
 
@@ -65,12 +76,21 @@ class User():
         if not email_regex.match(data['email']):
             is_valid = False
             flash('Please provide a valid email')
+
+
+
     #email must be uniqe
+        if len(User.get_user_by_email(data))!= 0:
+            is_valid = False 
+            flash('email already in use')
+
+
 
     #password must be at least 8 char
         if len(data['password']) < 8 or len(data['password']) > 60:
             is_valid = False
             flash('Password must be at least 8 char or maximum 60 char')
+
 
 
     #password and confirm password fields must match
@@ -79,3 +99,7 @@ class User():
             flash('Password and confirm password must match')
 
         return is_valid
+
+
+
+        # ({'username': data['username']})) 

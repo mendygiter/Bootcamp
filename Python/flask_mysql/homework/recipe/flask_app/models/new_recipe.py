@@ -1,5 +1,5 @@
-from unittest import result
 from flask_app.config.mysqlconnection import MySQLConnection, connectToMySQL
+from flask_app.models import user
 from flask import flash
 import re
 
@@ -18,19 +18,34 @@ class Recipe():
 
         self.users_id = data['users_id']
 
+        self.posted_by = {}
+
 
 
     @classmethod
     def all_recipes(cls):
 
-        query = 'SELECT * FROM recipes;'
+        query = 'SELECT * FROM recipes JOIN users ON recipes.users_id = users.id;'
 
         results = connectToMySQL('recipe').query_db(query)
 
         recipes = []
 
         for row in results:
-            recipes.append(cls(row))
+            print(row)
+            recipe = cls(row)
+            user_data = {
+                'id': row['users.id'],
+                'first_name': row['first_name'],
+                'last_name' : row['last_name'],
+                'email': row['email'],
+                'password': row['password'],
+                'created_at': row['created_at'],
+                'updated_at': row ['updated_at']
+
+            }
+            recipe.posted_by = user.User(user_data)
+            recipes.append(recipe)
         return recipes
 
 
@@ -88,7 +103,8 @@ class Recipe():
             is_valid = False
             flash('must be at least 3 characters long')
 
-        if len(data['made_on']) < 3:
+        if len(data['made_on']) != 10:
             is_valid = False
-            flash('must be at least 3 characters long')
+            flash('Please provide a date')
         
+        return is_valid

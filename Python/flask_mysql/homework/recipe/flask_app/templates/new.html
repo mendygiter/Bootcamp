@@ -8,7 +8,13 @@
 </head>
 <body>
     <h1>Add New Recipe</h1>
-
+    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
     <form action="/new" method = 'POST'>
 
         <input type="hidden" name="id" id="{{id}}">

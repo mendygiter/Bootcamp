@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1>Welcome to Fusegen</h1>
+    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+
+
+    <h2>Register</h2>
+    <form action="/user/register" method = "POST">
+        First Name: <input type="test" name="first_name"><br>
+        Last Name: <input type="text" name="last_name"><br>
+        Username: <input type="text" name="username"><br>
+        Email: <input type="text" name="email"><br>
+        Password: <input type="password" name="password"><br>
+        Confirm password: <input type="password" name="confirm_password"><br>
+        <input type="submit" name="Register">
+    </form>
+
+
+    <h2>Login</h2>
+    <form action="/users/login" method = "POST">
+        Email: <input type="email" name="email"><br>
+        Password: <input type="password" name="password"><br>
+        <input type="submit">
+    </form>
+</body>
+</html>

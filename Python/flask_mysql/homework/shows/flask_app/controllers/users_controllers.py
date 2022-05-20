@@ -1,6 +1,6 @@
 from flask_app import app
 from flask import render_template, redirect, request, flash, session
-from flask_app.models.user import User
+from flask_app.model.user import User
 
 
 from flask_bcrypt import Bcrypt    
@@ -20,6 +20,7 @@ def register_user():
         data = {
             'first_name': request.form['first_name'],
             'last_name': request.form['last_name'],
+            'username': request.form['username'],
             'email': request.form['email'],
             'password': bcrypt.generate_password_hash(request.form['password'])
             }
@@ -51,20 +52,20 @@ def login_user():
 
 
     session['user_id'] = user.id
-    session['first_name'] = user.first_name
+    session['username'] = user.username
 
-    return redirect ('/dashboard')
+    return redirect ('/success')
 
-    
+@app.route('/success')
+def success():
+    if 'user_id' not in session: 
+        flash('You must be logged in')
+        return redirect('/')
+
+    return render_template('success.html')
 
 
 @app.route('/logout')
 def logout():
     session.clear()
     return redirect('/')
-
-
-
-
-
-

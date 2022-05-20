@@ -1,4 +1,3 @@
-from crypt import methods
 from flask_app import app
 from flask import render_template, redirect, request, flash, session
 from flask_app.models.new_recipe import Recipe
@@ -41,10 +40,15 @@ def new_recipe():
 
     if 'user_id' not in session: 
         flash('You must be logged in')
-        return redirect('/new')
+        return redirect('/new_recipe')
 
-    new_recipe = Recipe.new_recipe(data)
-    return redirect('/dashboard')
+    if Recipe.validate_recipe(data):
+
+        new_recipe = Recipe.new_recipe(data)
+        return redirect('/dashboard')
+
+    else:
+        return redirect('/new_recipe')
 
 
 @app.route('/show/<int:id>')
@@ -57,8 +61,6 @@ def get_recipe(id):
         flash('You must be logged in')
         return redirect('/new')
 
-    
-
     get_recipe = Recipe.get_one(data)
     return render_template('getone.html', recipe = get_recipe)
 
@@ -70,9 +72,6 @@ def render_update(id):
     }
     get_recipe = Recipe.get_one(data)
     return render_template('edit.html', recipe = get_recipe)
-
-
-
 
 
 @app.route('/update/<int:id>', methods =['POST'])
@@ -91,8 +90,6 @@ def edit_user(id):
     Recipe.edit_recipe(data)
     return redirect('/dashboard')
     
-
-
 
 @app.route('/delete/<int:id>')
 def delete(id):

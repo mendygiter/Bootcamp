@@ -14,6 +14,7 @@
 
     <p>Name {{one_recipe.name}}</p>
     <p>Under 30 minutes? {{one_recipe.under_30_min}}</p>
+    <p>Posted by: {{one_recipe.posted_by.first_name}}</p>
 
     <a href="/show/{{one_recipe.id}}">View Instructions</a>
     {% if one_recipe.users_id == session['user_id'] %}

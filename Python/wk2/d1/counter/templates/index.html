@@ -9,8 +9,20 @@
 <body>
     <h1> Counter</h1>
 
-    <button type="button" name="reset">Click</button>
+    <form action="/">
 
-    <button type="reset">Reset</button>
+    <h3>{{session ['counts']}}</h3>
+
+    <button type="submit" name="reset">Click</button>
+
+
+
+</form>
+
+<form action="/reset">
+
+    <button type="submit">Reset</button>
+
+</form>
 </body>
 </html>

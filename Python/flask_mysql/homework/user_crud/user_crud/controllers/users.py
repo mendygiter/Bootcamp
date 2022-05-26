@@ -31,7 +31,7 @@ def create_user():
 
 
 @app.route('/show/<int:id>')
-def get_user(id):algo
+def get_user(id):
     data = {
         'id': id
     }

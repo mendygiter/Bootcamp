@@ -16,6 +16,7 @@ def home_page():
 
     return render_template('success.html', all_recipes = recipes)
 
+
 @app.route('/new_recipe')
 def create_recipe():
 
@@ -25,7 +26,8 @@ def create_recipe():
         return redirect('/new_recipe')
 
     return render_template('new.html')
-    
+
+
 @app.route('/new', methods = ['POST'])
 def new_recipe():
 
@@ -51,6 +53,7 @@ def new_recipe():
         return redirect('/new_recipe')
 
 
+
 @app.route('/show/<int:id>')
 def get_recipe(id):
     data = {
@@ -63,6 +66,8 @@ def get_recipe(id):
 
     get_recipe = Recipe.get_one(data)
     return render_template('getone.html', recipe = get_recipe)
+
+
 
 
 @app.route('/render/<int:id>')

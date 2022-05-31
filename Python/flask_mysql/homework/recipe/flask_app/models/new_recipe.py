@@ -58,6 +58,7 @@ class Recipe():
 
         return results
 
+
     #method to view instructions
     @classmethod
     def get_one(cls,data):
@@ -87,7 +88,7 @@ class Recipe():
 
     #validating forms
     @staticmethod
-    def validate_recipe(data):
+    def validate_painting(data):
 
         is_valid = True
 

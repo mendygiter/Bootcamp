@@ -8,8 +8,27 @@
 </head>
 <body>
     <h1>Welcome</h1>
-    <p>Welcome to Fusegen {{session['username']}}</p>
-    <a href="/logout">Logout</a>
+    <a href="/new_painting">Create</a>
+    <p>Welcome to Fusegen {{session['first_name']}}</p>
 
+    <p>Paintings</p>
+
+
+
+
+    {% for one_painting in all_paintings%}
+    
+    <a href="/show/{{one_painting.id}}">{{one_painting.title}}</a> <br>
+    <p>by {{one_painting.made_by.first_name}}</p>
+    
+    {% if one_painting.users_id == session['user_id'] %}
+    <a href="/render/{{one_painting.id}}">Edit</a>
+    <a href="/delete/{{one_painting.id}}">Delete</a>
+
+    {%endif%}
+    {%endfor%}
+
+    <a href="/new_painting"> Add Painting</a>
+    <a href="/logout">Logout</a>
 </body>
 </html>

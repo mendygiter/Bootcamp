@@ -21,7 +21,6 @@ def register_user():
         data = {
             'first_name': request.form['first_name'],
             'last_name': request.form['last_name'],
-            'username': request.form['username'],
             'email': request.form['email'],
             'password': bcrypt.generate_password_hash(request.form['password'])
             }
@@ -53,9 +52,9 @@ def login_user():
 
 
     session['user_id'] = user.id
-    session['username'] = user.username
+    session['email'] = user.email
 
-    return redirect ('/success')
+    return redirect ('/dashboard')
 
 @app.route('/success')
 def success():

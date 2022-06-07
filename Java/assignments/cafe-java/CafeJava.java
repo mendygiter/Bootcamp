@@ -9,15 +9,15 @@ public class CafeJava {
         
         // Menu variables (add yours below)
         double mochaPrice = 3.5;
-        double hotLatte = 4.75;
-        double hotAmericano = 6.25;
-        double chaiLatte = 3.20;
+        double dripCoffePrice = 4.75;
+        double lattePrice = 6.25;
+        double cappucinoPrice = 3.20;
     
         // Customer name variables (add yours below)
         String customer1 = "Cindhuri";
-        String customer2 = "John";
-        String customer3 = "Michael";
-        String customer4 = "Andrew";
+        String customer2 = "Sam";
+        String customer3 = "Jimmy";
+        String customer4 = "Noah";
     
         // Order completions (add yours below)
         boolean isReadyOrder1 = false;
@@ -28,19 +28,21 @@ public class CafeJava {
         // APP INTERACTION SIMULATION (Add your code for the challenges below)
         // Example:
         if (isReadyOrder1) {
-            System.out.println(generalGreeting + customer1 + readyMessage + displayTotalMessage + mochaPrice);
+            System.out.println(generalGreeting + customer1 + pendingMessage);
         }
 
         if (isReadyOrder2) {
-            System.out.println(generalGreeting + customer2 + pendingMessage + readyMessage + displayTotalMessage + hotLatte);
+            double total = lattePrice * 2;
+            System.out.println(generalGreeting + customer2 + pendingMessage + readyMessage + displayTotalMessage + total);
         }
 
         if (isReadyOrder3) {
-            System.out.println(generalGreeting + customer3 + pendingMessage + readyMessage + displayTotalMessage + hotAmericano);
+            double total = 2;
+            System.out.println(generalGreeting + customer3 + pendingMessage + readyMessage + displayTotalMessage + total);
         }
 
         if (isReadyOrder4) {
-            System.out.println(generalGreeting + customer4 + pendingMessage + readyMessage + displayTotalMessage + chaiLatte);
+            System.out.println(generalGreeting + customer4 +  readyMessage + displayTotalMessage + cappucinoPrice);
         }
     }
 }
